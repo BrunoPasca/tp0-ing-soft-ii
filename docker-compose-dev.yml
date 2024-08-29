@@ -29,19 +29,6 @@ services:
     networks:
       - test_net
     
-  tp0-ing:
-    image: ing-soft-serv:latest
-    container_name: tp0-ing
-    ports:
-      - "8080:3000"
-    networks:
-      - test_net
-    depends_on:
-      - postgres
-    environment:
-      ENVFILE: .env.docker
-
-
 networks:
   test_net:
     ipam:
@@ -52,4 +39,3 @@ networks:
 volumes:
   pgadmin:
   postgres:
-  tp0-ing:
