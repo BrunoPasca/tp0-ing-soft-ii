@@ -1,6 +1,7 @@
 import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
 import { SnapsService } from './snaps.service';
 import { CreateSnapDto } from './dto/create-snap.dto';
+import { UUID } from 'typeorm/driver/mongodb/bson.typings';
 
 @Controller('snaps')
 export class SnapsController {
@@ -17,12 +18,12 @@ export class SnapsController {
   }
 
   @Get(':id')
-  findOne(@Param('id') id: string) {
-    return this.snapsService.findOne(+id);
+  findOne(@Param('id') id: UUID) {
+    return this.snapsService.findOne(id);
   }
 
   @Delete(':id')
-  remove(@Param('id') id: string) {
-    return this.snapsService.remove(+id);
+  remove(@Param('id') id: UUID) {
+    return this.snapsService.remove(id);
   }
 }
