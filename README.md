@@ -1,85 +1,51 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
-</p>
+Una tabla de contenido.
+Una introducción con no más de un párrafo pequeño y conciso sobre la solución planteada.
+Una sección sobre qué fue lo más desafiante del proyecto.
+Un apartado de pre-requisitos listando lo necesario para levantar el entorno de desarrollo, especificando los lenguajes y versiones de los manejadores de paquetes necesarios.
+Link al “user-guide” de la libreria que se uso para testear, o en su defecto link al repo. e.g: Junit, gin-gonic
+Comandos para construir la imagen de Docker.
+Comandos para correr la base de datos.
+Comandos para correr la imagen del servicio.
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+## Contenidos
+En este readme se pueden encontrar:
+ - Introduccion
+ - Desafios
+ - Prerequisitos
+ - Referencias
+ - Comandos
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## Introducción
+Este es un proyecto en snap planteado para poder almacenar Snaps y poder obtenerlos. Para esto elegi usar el framework de NestJS ya que si bien no poseia mucha experiencia, considero que es muy interesante y que puede ser muy utilizada a futuro. Para este ejercicio se planteo: Un servidor en NestJS y una base de datos en Postgres. Se utilizo un docker compose para que esten en la misma red y que se puedan conectar.
 
-## Description
+## Desafios
+El principal desafio fue sin ninguna duda la implementacion de los servicios en docker. Si bien ya conocia la existencia de esta tecnologia y la habia utilizado. Nunca habia tenido que hacer un dockerfile y un docker compose desde cero. Por lo que significo un gran desafio y por suerte logre aprender lo suficiente.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## Prerequisitos
+Tener instalado node, version 20 o superior
+Tener instalado npm, version 10 o superior
+Tener instalado docker
 
-## Project setup
 
-```bash
-$ npm install
-```
+## Referencias
+https://nestjs.com/
+https://docs.nestjs.com/fundamentals/testing
+https://docs.nestjs.com/techniques/logger
 
-## Compile and run the project
+## Comandos (Linux)
+Levantar produccion (ya crea la imagen)
+make docker-compose-up-prod
 
-```bash
-# development
-$ npm run start
+Levantar development
+make docker-compose-up-dev
+npm run start:dev
 
-# watch mode
-$ npm run start:dev
+Testear
+npm run test:e2e
 
-# production mode
-$ npm run start:prod
-```
+Si se quiere levantar unicamente la imagen hacer:
+docker build . -t ing-soft-serv:latest
 
-## Run tests
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
-## Resources
-
-Check out a few resources that may come in handy when working with NestJS:
-
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+Otros comandos que me resultaron utiles:
+Revisar si hay un proceso corriendo en el puerto 5432: sudo lsof -i :5432
+Matar ese proceso: sudo kill {pid}
