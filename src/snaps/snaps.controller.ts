@@ -7,14 +7,14 @@ import { UUID } from 'typeorm/driver/mongodb/bson.typings';
 export class SnapsController {
   constructor(private readonly snapsService: SnapsService) {}
 
-  @Post()
-  create(@Body() createSnapDto: CreateSnapDto) {
-    return this.snapsService.create(createSnapDto);
-  }
-
   @Get()
   findAll() {
     return this.snapsService.findAll();
+  }
+
+  @Post()
+  create(@Body() createSnapDto: CreateSnapDto) {
+    return this.snapsService.create(createSnapDto);
   }
 
   @Get(':id')
