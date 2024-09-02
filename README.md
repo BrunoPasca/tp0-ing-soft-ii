@@ -24,7 +24,7 @@ El principal desafio fue sin ninguna duda la implementacion de los servicios en 
 ## Prerequisitos
 Tener instalado node, version 20 o superior
 Tener instalado npm, version 10 o superior
-Tener instalado docker
+Tener instalado docker, version utilizada: 27.1.2
 
 
 ## Referencias
@@ -33,10 +33,10 @@ https://docs.nestjs.com/fundamentals/testing
 https://docs.nestjs.com/techniques/logger
 
 ## Comandos (Linux)
-Levantar produccion (ya crea la imagen)
+Levantar produccion (ya crea la imagen, levanta el servidor en el puerto 8080)
 make docker-compose-up-prod
 
-Levantar development
+Levantar development (puerto 3000)
 make docker-compose-up-dev
 npm run start:dev
 
